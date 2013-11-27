@@ -11,9 +11,7 @@ class ResponseType extends Base implements IResponseType {
      */
     public function process($data)
     {
-        echo $data;
-
-        return null;
+        return $data;
     }
 
     public function parse()

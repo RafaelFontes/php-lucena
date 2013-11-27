@@ -6,6 +6,7 @@ use App\CustomRoute\Factory\WebControllerFactory;
 use App\CustomRoute\Router\WebRouter;
 use Lucena\Core\App\Bootstrap;
 use Lucena\Core\Base\IRouter;
+use Lucena\Core\Response;
 
 class WebBootstrap extends Bootstrap {
 
@@ -22,11 +23,12 @@ class WebBootstrap extends Bootstrap {
 
     /**
      * @param IRouter $router
-     * @return WebControllerFactory
+     * @param Response $response
+     * @return \Lucena\Core\Base\IControllerFactory
      */
-    public function &getControllerFactory(IRouter &$router)
+    public function &getControllerFactory(IRouter &$router, Response $response)
     {
-        $factory = new WebControllerFactory($router);
+        $factory = new WebControllerFactory($router, $response);
         $factory->parse();
 
         return $factory;

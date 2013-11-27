@@ -1,16 +1,8 @@
 <?php
 
-use App\CustomRoute\WebBootstrap;
+require_once "../../vendor/autoload.php";
 
-include '../bootstrap.php';
-
-/**
-  * Bootstrap -> FrontController -> ControllerFactory -> Router
- *                               -> $controller :: $method
- *                               -> Response
- */
-
-$bootstrap = new WebBootstrap();
+$bootstrap = new \App\CustomRoute\WebBootstrap();
 
 $bootstrap->run();
 
