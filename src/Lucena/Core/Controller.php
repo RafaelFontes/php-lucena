@@ -4,6 +4,8 @@
 namespace Lucena\Core;
 
 
+use Lucena\Core\Base\ILayout;
+
 class Controller {
 
     /**
@@ -14,6 +16,11 @@ class Controller {
      * @var Response
      */
     private $response;
+
+    /**
+     * @var ILayout
+     */
+    protected $layout;
 
     /**
      * @param Request $request
@@ -40,6 +47,22 @@ class Controller {
     public function getRequest()
     {
         return $this->request;
+    }
+
+
+    public function getResponse()
+    {
+        return $this->response;
+    }
+
+    public function setLayout(ILayout $layout)
+    {
+        $this->layout = $layout;
+    }
+
+    public function getLayout()
+    {
+        return $this->layout;
     }
 
 } 
