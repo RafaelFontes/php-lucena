@@ -21,4 +21,13 @@ class CliRouter extends Router {
             $this->setRequestString(implode($this->requestStringSeparator, $argv));
         }
     }
+
+    public function getRequestParts()
+    {
+        $parts = $this->requestParts;
+
+        array_shift($parts);
+
+        return $parts;
+    }
 }

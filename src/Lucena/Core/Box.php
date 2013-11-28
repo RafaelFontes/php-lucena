@@ -59,7 +59,7 @@ class Box extends Base {
     {
         $route = preg_replace("~\\{([^\\}]+)\\}~", '(?P<' . '${1}' . '>[^/]+)', $route);
 
-        if (!preg_match_all("~^$route$~", implode("/", $this->router->getRequestArgs()) , $matches)) {
+        if (!preg_match_all("~^$route$~", implode("/", $this->router->getRequestParts()) , $matches)) {
             return false;
         }
 

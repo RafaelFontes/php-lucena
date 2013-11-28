@@ -56,12 +56,5 @@ abstract class Router extends Base implements IRouter {
         return $this->requestParts;
     }
 
-    public function getRequestArgs()
-    {
-        $parts = $this->requestParts;
 
-        array_shift($parts);
-
-        return $parts;
-    }
 }

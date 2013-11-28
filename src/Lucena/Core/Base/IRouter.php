@@ -17,6 +17,4 @@ interface IRouter {
     public function getRequestPartAt($idx);
 
     public function getRequestParts();
-
-    public function getRequestArgs();
-} 
+}
